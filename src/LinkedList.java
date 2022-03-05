@@ -131,10 +131,7 @@ public class LinkedList<T> {
             head = null;
             return;
           }
-          current.next.prev = current.prev;
-          current.prev.next = current.next;
           head = current.next;
-          return;
         }
         current.next.prev = current.prev;
         current.prev.next = current.next;
