@@ -145,6 +145,9 @@ public class LinkedList<T> {
    * Exibe os elementos da lista.
    */
   public void print() {
+    if (head == null)
+      return;
+
     Node current = head;
     do {
       System.out.println(current.data);
