@@ -28,8 +28,14 @@ public class Menu {
     System.out.print("-> ");
     String name = scanner.nextLine();
 
+    
+    try  {
+      nameList.addFirst(name);
+    } catch(IllegalArgumentException e){
+      System.out.println(e.getMessage());
+    }
+    
     System.out.println();
-    nameList.addFirst(name);
   }
 
   private void addNameAtEnd() {
@@ -37,15 +43,28 @@ public class Menu {
     System.out.print("-> ");
     String name = scanner.nextLine();
     System.out.println();
-    nameList.addLast(name);
+    
+    try  {
+     nameList.addLast(name);   
+    } catch(IllegalArgumentException e){
+      System.out.println(e.getMessage());
+    }
+    
+    System.out.println();
   }
 
   private void removeName() {
     System.out.println("\n== Remover nome ==");
     System.out.print("-> ");
     String name = scanner.nextLine();
+    
+    try  {
+      nameList.remove(name);
+    } catch(IllegalArgumentException e){
+      System.out.println(e.getMessage());
+    }
+    
     System.out.println();
-    nameList.remove(name);
   }
 
   private void printList() {
